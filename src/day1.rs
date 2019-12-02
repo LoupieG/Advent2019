@@ -10,8 +10,10 @@ pub fn day1() -> io::Result<()> {
 
     for line in reader.lines() {
         let fuel = line?.trim().parse::<i32>().unwrap();
-        total_fuel += get_fuel_load(fuel);
-        module_fuel += get_wishful_load(fuel);
+        let fuel_load = get_fuel_load(fuel);
+
+        total_fuel += fuel_load;
+        module_fuel += get_wishful_load(fuel_load);
     }
     println!("total fuel {}", total_fuel);
     println!("module fuel {}", module_fuel);
@@ -24,10 +26,10 @@ fn get_fuel_load(fuel: i32) -> i32 {
     (fuel / 3) - 2
 }
 
-fn get_wishful_load(fuel: i32) -> i32 {
-    let mut mod_sum = 0;
+fn get_wishful_load(fuel_load: i32) -> i32 {
+    let mut mod_sum = fuel_load;
 
-    let mut next_fuel = fuel;
+    let mut next_fuel = fuel_load;
     loop {
         let calc_fuel = get_fuel_load(next_fuel);
 
