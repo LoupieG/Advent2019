@@ -2,7 +2,7 @@ use std::fs::File;
 use std::io::{self, prelude::*, BufReader};
 
 pub fn day1() -> io::Result<()> {
-    let file = File::open("/home/kmurray/src/rust/Advent2019/src/Day1.txt")?;
+    let file = File::open("./src/Day1.txt")?;
     let reader = BufReader::new(file);
 
     let mut total_fuel = 0;
