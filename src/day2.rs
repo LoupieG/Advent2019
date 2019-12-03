@@ -18,6 +18,7 @@ pub fn day2() -> io::Result<()> {
 
     let mut p1Vec = numVec.to_vec();
     calculate_vector(&mut p1Vec);
+    println!("Day 2 part 1 = {}", p1Vec[0]);
 
     for x in 0..99 {
         for y in 0..99 {
@@ -26,13 +27,12 @@ pub fn day2() -> io::Result<()> {
            p2Vec[2] = y;
            calculate_vector(&mut p2Vec);
             if p2Vec[0].eq(19690720.borrow()) {
-               println!("{} {} {} total {}", p2Vec[0], p2Vec[1], p2Vec[2], (p2Vec[1] * 100) + p2Vec[2]);
+               println!("Day 2 part 2 total {}", (p2Vec[1] * 100) + p2Vec[2]);
                break;
            }
         }
     }
 
-    println!("Day 2 part 1 = {}", p1Vec[0]);
     Ok(())
 
 }
