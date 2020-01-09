@@ -22,7 +22,7 @@ fn is_valid(pass: &Vec<char>, part: i32) -> bool {
     let mut doubleCount = 0;
     let mut counter = 0;
 
-    while counter < pass.len() - 1 { //in 1..pass.len() {
+    while counter < pass.len() - 1 {
         if pass[counter] > pass[counter + 1] {
             result = false;
             break;
