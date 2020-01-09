@@ -20,19 +20,6 @@ pub fn day5() -> io::Result<()> {
     let code = get_diagnostic_code(&mut p1Vec, 1);
     println!("Day 5 part 1 = {}", code);
 
-    //for x in 0..99 {
-    //    for y in 0..99 {
-    //        let mut p2Vec = numVec.to_vec();
-    //        p2Vec[1] = x;
-    //        p2Vec[2] = y;
-    //        calculate_vector(&mut p2Vec);
-    //        if p2Vec[0].eq(19690720.borrow()) {
-    //            println!("Day 2 part 2 total {}", (p2Vec[1] * 100) + p2Vec[2]);
-    //            break;
-    //        }
-    //    }
-    //}
-
     Ok(())
 
 }
