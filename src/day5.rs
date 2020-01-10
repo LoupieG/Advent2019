@@ -1,6 +1,5 @@
 use std::fs::File;
 use std::io::{self, prelude::*, BufReader};
-use std::sync::atomic::Ordering::AcqRel;
 
 pub fn day5() -> io::Result<()> {
     let file = File::open("./input/Day5.txt")?;
@@ -109,11 +108,9 @@ fn get_diagnostic_code2(iVec: &mut Vec<i32>, input_instruction: i32) -> i32 {
                 input_instruction // save to position
             },
             4 => {
-                index += 2;
                 println!("CODE {}", iVec[location]);
                 result = iVec[location];
                 break;
-                iVec[location]
             },
             5 =>  {
                 //let left = iVec[iVec[index + 1] as usize];
